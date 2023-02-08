@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace formpos
+namespace Zadanie_Practik
 {
     public partial class Form10 : Form
     {

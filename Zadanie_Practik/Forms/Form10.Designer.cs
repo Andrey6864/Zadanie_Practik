@@ -1,4 +1,4 @@
-﻿namespace formpos
+﻿namespace Zadanie_Practik
 {
     partial class Form10
     {

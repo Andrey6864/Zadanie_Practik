@@ -31,12 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sTUDataSet = new Zadanie_Practik.STUDataSet();
-            this.sTUDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.theSupplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.___The_supplier_TableAdapter = new Zadanie_Practik.STUDataSetTableAdapters.@__The_supplier_TableAdapter();
-            this.tovarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tovarTableAdapter = new Zadanie_Practik.STUDataSetTableAdapters.tovarTableAdapter();
             this.iDvendorCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitOfMeasurementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,27 +43,33 @@
             this.quantityInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tovarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sTUDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sTUDataSet = new Zadanie_Practik.STUDataSet();
+            this.theSupplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.___The_supplier_TableAdapter = new Zadanie_Practik.STUDataSetTableAdapters.@__The_supplier_TableAdapter();
+            this.tovarTableAdapter = new Zadanie_Practik.STUDataSetTableAdapters.tovarTableAdapter();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theSupplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tovarBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theSupplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -96,34 +96,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1237, 333);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // sTUDataSet
-            // 
-            this.sTUDataSet.DataSetName = "STUDataSet";
-            this.sTUDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sTUDataSetBindingSource
-            // 
-            this.sTUDataSetBindingSource.DataSource = this.sTUDataSet;
-            this.sTUDataSetBindingSource.Position = 0;
-            // 
-            // theSupplierBindingSource
-            // 
-            this.theSupplierBindingSource.DataMember = "\' The supplier\'";
-            this.theSupplierBindingSource.DataSource = this.sTUDataSetBindingSource;
-            // 
-            // ___The_supplier_TableAdapter
-            // 
-            this.___The_supplier_TableAdapter.ClearBeforeFill = true;
-            // 
-            // tovarBindingSource
-            // 
-            this.tovarBindingSource.DataMember = "tovar";
-            this.tovarBindingSource.DataSource = this.sTUDataSetBindingSource;
-            // 
-            // tovarTableAdapter
-            // 
-            this.tovarTableAdapter.ClearBeforeFill = true;
             // 
             // iDvendorCodeDataGridViewTextBoxColumn
             // 
@@ -197,6 +169,34 @@
             this.imageDataGridViewTextBoxColumn.HeaderText = "Image";
             this.imageDataGridViewTextBoxColumn.Name = "imageDataGridViewTextBoxColumn";
             // 
+            // tovarBindingSource
+            // 
+            this.tovarBindingSource.DataMember = "tovar";
+            this.tovarBindingSource.DataSource = this.sTUDataSetBindingSource;
+            // 
+            // sTUDataSetBindingSource
+            // 
+            this.sTUDataSetBindingSource.DataSource = this.sTUDataSet;
+            this.sTUDataSetBindingSource.Position = 0;
+            // 
+            // sTUDataSet
+            // 
+            this.sTUDataSet.DataSetName = "STUDataSet";
+            this.sTUDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // theSupplierBindingSource
+            // 
+            this.theSupplierBindingSource.DataMember = "\' The supplier\'";
+            this.theSupplierBindingSource.DataSource = this.sTUDataSetBindingSource;
+            // 
+            // ___The_supplier_TableAdapter
+            // 
+            this.___The_supplier_TableAdapter.ClearBeforeFill = true;
+            // 
+            // tovarTableAdapter
+            // 
+            this.tovarTableAdapter.ClearBeforeFill = true;
+            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -225,6 +225,31 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(1249, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -259,16 +284,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -291,26 +309,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // button1
             // 
@@ -367,10 +367,10 @@
             this.Text = "Поставщик";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theSupplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tovarBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theSupplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();

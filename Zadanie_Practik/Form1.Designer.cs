@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.sTUDataSet = new Zadanie_Practik.STUDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -35,7 +36,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sTUDataSet
+            // 
+            this.sTUDataSet.DataSetName = "STUDataSet";
+            this.sTUDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -91,7 +98,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(273, 156);
+            this.button1.Location = new System.Drawing.Point(278, 157);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 7;
@@ -113,13 +120,14 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Вход";
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private STUDataSet sTUDataSet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;

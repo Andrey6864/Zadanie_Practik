@@ -72,5 +72,16 @@ namespace Zadanie_Practik
             af.Owner = this;
             af.Show();
         }
+
+      
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form10 af = new Form10();
+            af.Owner = this;
+            af.Show();
+        }
+
+        
     }
 }
