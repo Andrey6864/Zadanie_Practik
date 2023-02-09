@@ -41,7 +41,18 @@ namespace Zadanie_Practik
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.AllowUserToAddRows = false;
 
-        
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                adapter = new SqlDataAdapter(sql, connection);
+                ds = new DataSet();
+                adapter.Fill(ds);
+                dataGridView2.DataSource = ds.Tables[0];
+                // делаем недоступным столбец id для изменения
+                dataGridView2.Columns["IDOrders"].ReadOnly = true;
+            }
+
+
         }
 
         
@@ -222,26 +233,35 @@ namespace Zadanie_Practik
 
         private void button2_Click_2(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
-                adapter = new SqlDataAdapter(sql, connection);
-                commandBuilder = new SqlCommandBuilder(adapter);
-                adapter.InsertCommand = new SqlCommand("Orders", connection);
-                adapter.InsertCommand.CommandType = CommandType.StoredProcedure;
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@[Order list]", SqlDbType.NVarChar, 255, "Order list"));
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@Number", SqlDbType.Float, 0, "Number"));
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@[_Order date]", SqlDbType.Date, 0, "_Order date"));
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@Delivery date", SqlDbType.Date, 0, "Delivery date"));
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@[Point of issue]", SqlDbType.Float, 0, "Point of issue"));
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@[Full name of the client]", SqlDbType.NVarChar, 255, "Full name of the client"));
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@[Code to receive]", SqlDbType.Float, 0, "Code to receive"));
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@[Order status]", SqlDbType.NVarChar, 255, "Order status"));
-                SqlParameter parameter = adapter.InsertCommand.Parameters.Add("@IDOrders", SqlDbType.Float, 0, "IDOrders");
-                parameter.Direction = ParameterDirection.Output;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    adapter = new SqlDataAdapter(sql, connection);
+                    commandBuilder = new SqlCommandBuilder(adapter);
+                    adapter.InsertCommand = new SqlCommand("Orders", connection);
+                    adapter.InsertCommand.CommandType = CommandType.StoredProcedure;
+                    adapter.InsertCommand.Parameters.Add(new SqlParameter("@[Order list]", SqlDbType.NVarChar, 255, "Order list"));
+                    adapter.InsertCommand.Parameters.Add(new SqlParameter("@Number", SqlDbType.Float, 0, "Number"));
+                    adapter.InsertCommand.Parameters.Add(new SqlParameter("@[_Order date]", SqlDbType.Date, 0, "_Order date"));
+                    adapter.InsertCommand.Parameters.Add(new SqlParameter("@Delivery date", SqlDbType.Date, 0, "Delivery date"));
+                    adapter.InsertCommand.Parameters.Add(new SqlParameter("@[Point of issue]", SqlDbType.Float, 0, "Point of issue"));
+                    adapter.InsertCommand.Parameters.Add(new SqlParameter("@[Full name of the client]", SqlDbType.NVarChar, 255, "Full name of the client"));
+                    adapter.InsertCommand.Parameters.Add(new SqlParameter("@[Code to receive]", SqlDbType.Float, 0, "Code to receive"));
+                    adapter.InsertCommand.Parameters.Add(new SqlParameter("@[Order status]", SqlDbType.NVarChar, 255, "Order status"));
+                    SqlParameter parameter = adapter.InsertCommand.Parameters.Add("@IDOrders", SqlDbType.Float, 0, "IDOrders");
+                    parameter.Direction = ParameterDirection.Output;
 
-                adapter.Update(ds);
+                    adapter.Update(ds);
+                }
+            }
+            catch (InvalidCastException ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
+
+
     }
 }
