@@ -45,8 +45,10 @@ namespace Zadanie_Practik
             {
                 SqlConnection con = new SqlConnection(@"Data Source=WIN-4CAAR61UG4L;Initial Catalog=STU;Integrated Security=True;");
                 con.Open();
-                string str = "insert into Users(Login,Password) values ('" + textBox1.Text + "','" + textBox2.Text +  "')";
+                string str = "insert into Users(Login,Password) values (@Login,@Password)";
                 SqlCommand cmd = new SqlCommand(str, con);
+                cmd.Parameters.AddWithValue("@Login", textBox1.Text);
+                cmd.Parameters.AddWithValue("@Password", textBox2.Text);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Пользователь зарегистрирован!!!");
                 
